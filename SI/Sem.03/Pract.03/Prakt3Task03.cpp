@@ -3,19 +3,17 @@
 using namespace std;
 int main()
 {
-	unsigned int num, newnum, result, digits;
-	result = 0;
+	int num, reversed;
+	reversed = 0;
 	cout << "Enter a number:";
 	cin >> num;
-	newnum = num * num;
-	digits = log10(newnum) + 1;
-	for (int i = digits; i !=0; i--)
+	num = num * num;
+	while(num != 0)
 	{
-		result = result + (newnum % 10) * pow(10,i-1);
-		newnum = newnum / 10;
+		reversed = reversed*10 + num % 10;
+		num /= 10;
 		
 	}
-	cout << result;
-	
+	cout << reversed;
 	return 0;
 }
